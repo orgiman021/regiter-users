@@ -8,6 +8,7 @@
     font-family: vazir;
     direction: rtl;
     font-weight: bold;
+    transition: all 0.7s;
 }
 body{
     background-color: lightgray;
@@ -52,4 +53,13 @@ button{
     margin-right: 120px;
     background-color: rgb(30, 92, 250);
     color: white;
+}
+button{
+    cursor: pointer;
+}
+button:hover{
+    background-color: blue;
+}
+button:active{
+    background-color: red;
 }
