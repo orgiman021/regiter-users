@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>users list</title>
+    <link rel="stylesheet" href="./assets/styles/css/style.css">
+</head>
+<body>
+    <section class="mainSection">
+
+        <div class="divForm">
+
+            <h2 class="formHeadline">فرم اطلاعات ثبت کاربران</h2>
+            <form action="">
+                
+                <input type="text" placeholder="نام" id="nameInput">
+                <input type="text" placeholder="نام خانوادگی" id="lastNameInput">
+                <input type="email" placeholder="ایمیل">
+                <input type="text" placeholder="شغل">
+                <input type="number" placeholder="شماره تماس">
+                <select name="genderInput" class="genderSelector" id="genderInput">
+                    <option value="nothing">جنسیت خود را انتخاب کنید</option>
+                    <option value="man">آقا🙍‍♂️</option>
+                    <option value="woman">خانوم🙍‍♀️</option>
+                </select>
+                <button onclick="submit()" type="submit">
+                    افزودن
+                    </button>
+                </form>
+                <button onclick="showUsers()">نمایش همه کاربران</button>
+                <button onclick="findWithEmail()">پیدا کردن با ایمیل</button>
+                <button onclick="allWorker()">آیا همه شاغل اند؟</button>
+                <button onclick="is1man()">آیا حداقل یک مرد هست؟</button>
+            </section>
+        </div>
+            
+
+    <script src="./assets/script/script.js"></script>
+</body>
+</html>
