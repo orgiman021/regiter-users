@@ -5,7 +5,8 @@ const mail = document.getElementById("mailInput");
 const job = document.getElementById("jobInput");
 const phoneNumber = document.getElementById("phoneNumberInput");
 const gender = document.getElementById("genderInput");
-
+const overlay = document.getElementById('overlay')
+const modal = document.getElementById('modal')
 let users = [];
 form.addEventListener("submit", function (e) {
   e.preventDefault();
