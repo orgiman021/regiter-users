@@ -1,9 +1,9 @@
 
-@font-face {
+ @font-face {
     font-family: vazir;
-    src: url('../font/persianFont/vazir-font-v18.0.0/Vazir-Bold.woff');
-    src: url('../font/persianFont/vazir-font-v18.0.0/Vazir-Bold.woff2');
-}
+    src: url('../font/persianFont/vazir-font-v18.0.0/Vazir-Bold.woff'); 
+     src: url('../font/persianFont/vazir-font-v18.0.0/Vazir-Bold.woff2'); 
+} 
 *{
     font-family: vazir;
     direction: rtl;
