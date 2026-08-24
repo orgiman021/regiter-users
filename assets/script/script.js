@@ -36,18 +36,19 @@ document.getElementById("showUsers").addEventListener("click", () => {
     const list = document.createElement("ul");
 
     users.map((personas, index) => {
+
+      const { firstName, lastName, mail, job, phoneNumber, gender } = personas;
       const li = document.createElement("li");
-      li.innerText = `${index + 1} . 
-      نام : ${personas.firstName}
-      نام خانوادگی : ${personas.lastName}
-      ایمیل : ${personas.mail}
-      شغل : ${personas.job || "---"}
-      شماره تلفن : ${personas.phoneNumber || "---"}
-      جنسیت : ${personas.gender || "---"}
+      li.innerText = `${index + 1} .  نام : ${firstName}
+      نام خانوادگی : ${lastName}
+      ایمیل : ${mail}
+      شغل : ${job || "---"}
+      شماره تلفن : ${phoneNumber || "---"}
+      جنسیت : ${gender || "---"}
       `;
       list.appendChild(li);
     });
     modal.appendChild(list);
   }
-  console.log(users);
+
 });
