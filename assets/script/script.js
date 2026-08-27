@@ -9,6 +9,7 @@ const overlay = document.getElementById("overlay");
 const modal = document.getElementById("modal");
 const errorMsg = document.getElementById("errorMsg");
 let users = [];
+// افزودن کاربران به لیست
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const newPerson = {
@@ -28,6 +29,7 @@ form.addEventListener("submit", (e) => {
     form.reset();
   }
 });
+// نمایش کاربران در لیست
 document.getElementById("showUsers").addEventListener("click", () => {
   if (users.length <= 0) {
     modal.innerHTML = `<h3>هنوز کاربری ثبت نام نکرده است❌</h3>`;
@@ -35,8 +37,7 @@ document.getElementById("showUsers").addEventListener("click", () => {
     modal.innerHTML = `<h3>لیست کاربران :</h3>`;
     const list = document.createElement("ul");
 
-    users.map((personas, index) => {
-
+    users.forEach((personas, index) => {
       const { firstName, lastName, mail, job, phoneNumber, gender } = personas;
       const li = document.createElement("li");
       li.innerText = `${index + 1} .  نام : ${firstName}
@@ -50,17 +51,15 @@ document.getElementById("showUsers").addEventListener("click", () => {
     });
     modal.appendChild(list);
   }
-
-  overlay.style.opacity = 1
-  overlay.style.visibility ="visible"
-  modal.style.opacity = 1
-  modal.style.visibility ="visible"
+  overlay.style.opacity = 1;
+  overlay.style.visibility = "visible";
+  modal.style.opacity = 1;
+  modal.style.visibility = "visible";
 });
-
-overlay.addEventListener('click',()=>{
-  
-  overlay.style.opacity = 0
-  overlay.style.visibility ="hidden"
-  modal.style.opacity = 0
-  modal.style.visibility ="hidden"
-})
+// کنار گذاشتن مدال با کلبک در پس زمینه
+overlay.addEventListener("click", () => {
+  overlay.style.opacity = 0;
+  overlay.style.visibility = "hidden";
+  modal.style.opacity = 0;
+  modal.style.visibility = "hidden";
+});
