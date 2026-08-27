@@ -63,3 +63,56 @@ overlay.addEventListener("click", () => {
   modal.style.opacity = 0;
   modal.style.visibility = "hidden";
 });
+
+//پیدا کردن با ایمیل
+
+document.getElementById("findWithEmail").addEventListener("click", () => {
+  const emailToFind = prompt("ایمیل فرد مورد نظر را وارد کنید : ");
+  const person = users.filter((p) => p.mail === emailToFind.trim());
+  if (person.length > 0) {
+    let res = "کاربر مورد نظر پیدا شد✅";
+    person.forEach((person, index) => {
+      const { firstName, lastName, mail, job, phoneNumber, gender } = person;
+      res += ` 
+      ${index + 1} <p>نام : ${firstName}</p>
+      <p>نام خانوادگی : ${lastName}</p>
+      <p>ایمیل : ${mail}</p>
+      <p>شغل : ${job}</p>
+      <p>شماره تلفن : ${phoneNumber}</p>
+      <p>جنسیت : ${gender}</p>
+      `;
+      modal.innerHTML = res;
+    });
+  } else {
+    modal.innerHTML = `<h3>متاسفانه فرد مورد نظر یافت نشد❌</h3>`;
+  }
+
+  overlay.style.opacity = 1;
+  overlay.style.visibility = "visible";
+  modal.style.opacity = 1;
+  modal.style.visibility = "visible";
+});
+// اطلاعات راجب شاغل بودن همه
+document.getElementById("allWorker").addEventListener('click',()=>{
+   users.every(p=>p.job.trim() !== "" )
+   ? modal.innerHTML = "همه شاغل اند✅"
+   : modal.innerHTML = "همه شاغل نیستند❌"
+
+   
+   overlay.style.opacity = 1;
+   overlay.style.visibility = "visible";
+   modal.style.opacity = 1;
+  modal.style.visibility = "visible";
+});
+// بودن یک مرد حداقل بین ثبت نام کنندگان
+document.getElementById("is1man").addEventListener('click',()=>{
+  users.some(p=>p.gender == "آقا")
+  ? modal.innerHTML = "بله مرد وجود دارد ✅"
+  : modal.innerHTML = "خیر هیچ مردی وجود ندارد❌"
+
+  overlay.style.opacity = 1;
+  overlay.style.visibility = "visible";
+  modal.style.opacity = 1;
+  modal.style.visibility = "visible";
+})
+
